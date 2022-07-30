@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        //创建一个数组
+        var arr=new Array();
+        console.log(typeof arr);
+        /*向数组中添加元素
+
+        语法：数组[索引]=值
+
+        */
+
+        arr[0]=10;
+        arr[1]=12;
+        arr[2]=15;
+
+        /*
+        读取数组中的元素
+        语法：数组[索引]
+        */
+        console.log(arr[0]);
+
+        /*获取数组的长度
+        语法：数组.length
+        对于连续性的数组。使用length可以获取数组的长度
+        对于非连续的数组，使用length可以获取数组的最大索引+1
+        */ 
+
+        console.log(arr.length);
+
+        //向数组的最后一个位置添加元素
+        arr[arr.length]=30;
+        console.log(arr);
+
+        </script>
+    </head>
+</html>

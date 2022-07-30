@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        /*
+        算数运算符
+        对非Number类型的值进行运算时，会将这些值转换为Number类型进行计算
+        任何值和NaN做运算均为NaN
+        字符串算数运算相加时=字符串拼接
+        字符串算数运算相减,乘除时：转换为Number
+        任何值与字符串相加，转换为字符串相加
+        */
+        //将任意类型的数据类型转换为String:任意的数据类型+""
+        //任何值做-，*，/ 运算时都会自动转换为Number,可以通过为一个值-，*1，/1来将其转换为Number
+
+        var a=123;
+        var b=a+"";
+        console.log(typeof b);
+        console.log(b);
+
+        var result=1+2+"3";
+        console.log("result="+result);
+
+        var result2="1"+2+3;
+        console.log("result2="+result2);
+
+        var c="123";
+        var d=c-0;
+        console.log(typeof d);
+        console.log(d);
+
+        </script>
+    </head>
+</html>

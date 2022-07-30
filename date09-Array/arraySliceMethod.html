@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>slice</title>
+        <script type="text/javascript">
+        /*
+        slice()
+        可以用来从数组中提取数据
+        参数：
+        1：截取开始的位置索引，包含开始索引
+        2：截取结束的位置索引，不包含结束索引
+        第二个参数可以省略不写
+        
+        */
+       var arr=["孙悟空","猪八戒","唐三藏","沙悟净","小白龙"];
+
+       console.log(arr);
+       console.log(arr.slice(1,2));
+
+       /*
+       splice()
+       可以删除数组中的元素
+       使用splice()方法会影响到原数组，会将指定元素从数组中删除
+       并将删除的元素作为返回值返回
+       参数：
+       第一个，表示开始位置索引
+       第二个，表示删除的数量
+
+
+       */
+      var arr2=["孙悟空","猪八戒","蜘蛛精","唐僧","沙悟净"];
+    
+      var result=arr2.splice(2,1);
+      console.log(arr2);
+      console.log(result);
+
+      var result2=arr2.splice(2,1,"小白龙");
+      console.log(arr2);
+     // console.log(result2);
+    
+
+
+
+      
+       
+        </script>
+    </head>
+</html>

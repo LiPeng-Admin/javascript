@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图</title>
+        <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 520px;
+            height: 375px;
+            /* 设置居中 */
+            margin: 50px auto;
+            /*设置背景色*/
+            background-color: greenyellow;
+            /*设置padding*/
+            padding: 10px 0;
+            /*开启相对定位*/
+            position: relative;
+            /*裁剪溢出的内容*/
+            overflow: hidden;
+        }
+        #imgList{
+            /*去除项目符号*/
+                list-style: none;
+                /*设置ul的宽度*/
+                /* width: 3500px; */
+                /*开启绝对定位*/
+                position: absolute;
+                /*设置偏移量,每向左移动520px,显示下一张*/
+                left:-520px
+
+             }
+        #imgList li{
+            /*设置浮动*/
+            float: left;
+            /*设置左右外边距*/
+            margin: 0 10px;
+        }
+        /*设置导航按钮*/
+        #naDiv {
+            /*开启绝对定位*/
+            position: absolute;
+            bottom: 15px;
+            }
+        #naDiv a{
+            /*设置超链接浮动*/
+            float: left;
+            /*设置超链接宽和高*/
+            width: 15px;
+            height: 15px;
+            /*设置背景颜色*/
+            background-color: red;
+            /*设置左右外边距*/
+            margin: 0 5px;
+            /*设置透明*/
+            opacity: 0.5;
+            /*兼容ie8透明*/
+            filter: alpha(opacity=50);
+
+
+        }
+        /*设置鼠标移入的效果*/
+        #naDiv a:hover{
+            background-color: black;
+        }
+        
+     </style>
+        <script type="text/javascript">
+        window.onload=function(){
+            //获取imgList
+            var imgList=document.getElementById("imgList");
+            //获取页面中所有的img 标签
+            var imgArr=document.getElementsByTagName("img");
+            //设置imgList的宽度
+            imgList.style.width=imgArr.length*520+"px"
+
+            //设置导航按钮居中
+            //获取naDiv
+            var naDiv=document.getElementById("naDiv");
+            //获取outer 
+            var outer=document.getElementById("outer");
+           naDiv.style.left= (outer.offsetWidth-naDiv.offsetWidth)/2+"px";
+
+           //默认显示图片的索引
+           var index=0;
+           //获取所有的a
+           var allA=document.getElementsByTagName("a");
+           //设置默认选中的效果
+           allA[index].style.backgroundColor="black";
+
+           /*
+           点击超链接切换到对应的图片
+           */
+          //为所有的a 绑定单击响应函数
+          for(var i=0;i<allA.length;i++){
+
+            //为每个超链接添加一个num 属性
+            allA[i].num=i;
+
+            //为超链接绑定单击响应函数
+            allA[i].onclick=function(){
+                //获取点击超链接的索引，并将其设置为index
+
+                index=this.num;
+                //切换图片
+                imgList.style.left=-520*index+"px";
+                setA();
+
+             }
+          }
+
+          //自动切换图片
+          autoChangePhoto();
+
+
+
+
+          //创建一个方法来设置选中的a
+          function setA(){
+          //遍历所有的a，并将其背景颜色设置为红色
+          for(var i=0;i<allA.length;i++){
+              allA[i].style.backgroundColor="";
+          }
+          //将选择的a 设置为黑色
+          allA[index].style.backgroundColor="black";
+        }
+        // 创建一个函数，用来开启自动切换图片
+        function autoChangePhoto(){
+            //开启一个定时器，用来自动切换图片
+            setInterval(function(){
+                //使索引自增
+                index++;
+                //执行动画，切换图片
+
+            },3000)
+
+        }
+
+
+
+
+        }
+       
+        </script>
+    </head>
+    <body>
+        <div id="outer">
+            <ul id="imgList">
+                <li><img src="img/1.jpg"></li>
+                <li><img src="img/2.jpg"></li>
+                <li><img src="img/3.jpg"></li>
+                <li><img src="img/4.jpg"></li> 
+                <li><img src="img/5.jpg"></li>
+                <li><img src="img/6.jpg"></li>
+               
+            </ul>
+            <!-- 创建导航按钮 -->
+            <div id="naDiv">
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+                <a href="javascript:;"></a>
+
+            </div>
+
+        </div>
+    </body>
+</html>

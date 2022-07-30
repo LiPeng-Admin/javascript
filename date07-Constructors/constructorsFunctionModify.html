@@ -1,0 +1,31 @@
+<HTML>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        //创建一个Person构造函数
+        function Person(name,age,gender){
+            this.name=name;
+            this.age=age;
+            this.gender=gender;
+
+            //向对象添加一个方法
+            // this.sayName=function (){
+            //     alert("Hello,大家好，我是"+this.name);
+            // }
+
+        }
+        //向原型中添加sayName方法
+
+        Person.prototype.sayName=function(){
+            alert("hello,我是"+this.name);
+        }
+        //创建一个Person实例
+        var per=new Person("孙悟空",500,"男");
+
+        per.sayName();
+
+
+        </script>
+    </head>
+</HTML>

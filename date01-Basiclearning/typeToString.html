@@ -1,0 +1,54 @@
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+   
+    //将其他的数据类型转换为String类型
+
+     /*
+     方法一:调用被转换类型的toString()方法，
+    该方法不会影响原变量，它会将转换的结果返回
+
+    */
+   var a=123;
+   var b=a.toString();
+   console.log(typeof b);
+   console.log(b);
+
+   var c=true;
+   var d=c.toString();
+   console.log(typeof d);
+   console.log(d);
+   
+   /*
+   会报错的情况：
+   var e=null;e=undefind
+   var f=e.toString();
+   console.log(typeof f);
+   console.log(f);
+   */
+
+   /*
+   方法二：调用String()函数，并将转换的数据作为参数传递给函数
+   对于null和undefined,不会调用toString()方法，直接转变为"null"和"undefined"
+
+   */
+    var i=456;
+    var j=String(i);
+    console.log(typeof j);
+    console.log(j);
+
+    var l=null;
+    var m=String(l);
+    console.log(typeof m);
+    console.log(m);
+
+   
+    </script>
+    <body>
+
+    </body>
+    
+    </head>
+</html>

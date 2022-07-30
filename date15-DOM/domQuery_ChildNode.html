@@ -1,0 +1,175 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        /*
+        获取元素节点的子节点
+
+        通过具体的元素节点调用
+        1:getElementsByTagName()
+        方法，返回当前节点的指定标签名后代节点
+        2：childNodes
+        属性，表示当前节点的所有子节点
+        3：firstChild
+        属性，表示当前节点的第一个子节点
+        4：lastChild
+        属性，表示当前节点的最后一个子节点
+        
+        */
+
+          window.onload=function(){
+       
+        //为id为btn04按钮绑定一个单击响应函数
+        var btn04=document.getElementById("btn04");
+        btn04.onclick=function(){
+             
+             //获取id为city的元素
+             var city=document.getElementById("city");
+             //任务1：查找#city下的所有li节点
+           var lis= city.getElementsByTagName("li");
+          // document.write(lis.length);
+          for(var i=0;i<lis.length;i++){
+              document.write(lis[i].innerHTML+" ");
+          }
+
+        }
+
+         //返回#city的所有子节点
+         var btn05=document.getElementById("btn05");
+         btn05.onclick=function(){
+             //获取id为city的元素
+             var city=document.getElementById("city");
+
+              //任务2：返回#city的所有子节点
+              /*
+              childNodes属性会获取包括文本节点在内的所有子节点
+              根据DOM,标签空白也会当成文本节点
+              */
+              var cns=city.childNodes;
+              //alert(cns.length);
+
+              /*
+              children属性可以获取当前元素的所有子元素
+              */
+            //  var lis2=city.children;
+            //  document.write(lis2.length);
+
+              for(var i=0;i<cns.length;i++){
+                  document.write(cns[i].innerHTML);
+         }
+        }
+
+         
+         //为id 为btn06的按钮绑定一个单击响应函数
+         var btn06=document.getElementById("btn06");
+         btn06.onclick=function(){
+             //获取id为phone的元素
+             var phone=document.getElementById("phone");
+
+              //返回#phone的第一个节点
+            //   var firstphone=phone.childNodes[0];
+            //   document.write(firstphone.innerHTML);
+            //firstChild获取当前元素的第一个子节点，包括空白文本
+              var firstphone=phone.firstChild;
+              //document.write(firstphone.length);
+              document.write(firstphone.innerHTML);
+              //firstElementChild 获取当前元素的第一个子元素
+               //   fir=phone.firstElementChild;
+            //   alert(fir);
+}
+        }
+          //返回#bj的父节点
+         //返回#android 的前一个兄弟节点
+         //读取#usernamed的value 属性值
+         //设置#username的value属性值
+         //返回#bj的文本值
+
+
+         
+        </script>
+    </head>
+    <body>
+        <div id="total">
+            <p>
+                你喜欢哪个城市？
+            </p>
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+            <br>
+            <br>
+            <p>
+                你喜欢哪款单击游戏？
+            </p>
+            <ul id="ganem">
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+            <br/>
+            <br/>
+            <p>
+                你手机的操作系统是？
+            </p>
+            <ul id="phone"><li>IOS</li><li id="android">Android</li><li>Windows Phone</li></ul>
+                
+                <!-- <li>Windows Phone</li></ul> -->
+
+        </div>
+        <div class="innder">
+            gender:
+            <input type="radio" name="gender" value="male"/>
+            Male
+            <input type="radio" name="gender" value="female"/>
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde"/>
+
+
+
+        </div>
+        <div id="btnList">
+            <div><button id="btn01">查找#bj节点</button></div>
+            <div><button id="btn02">查找所有li节点</button></div>
+            <div><button id="btn03">查找name=gender的所有节点</button></div>
+            <div><button id="btn04">查找#city下的所有li节点</button></div>
+            <div><button id="btn05">返回#city的所有子节点</button></div>
+            <div><button id="btn06">返回#phone的第一个节点</button></div>
+            <div><button id="btn07">返回#bj的父节点</button></div>
+            <div><button id="btn08">返回#android 的前一个兄弟节点</button></div>
+            <div><button id="btn09">读取#usernamed的value 属性值</button></div>
+            <div><button id="btn10">设置#username的value属性值</button></div>
+            <div><button id="btn11">返回#bj的文本值</button></div>
+            
+
+        </div>
+    </body>
+</html>
+
+   
+         
+
+       
+              
+
+         
+         
+        
+        
+
+
+         
+         
+
+      
+    
+    
+       
+       

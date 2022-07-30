@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        /*
+        对于非数值进行比较时，将其转换为数值后进行比较
+        若符号两侧均为均为字符串，不是将其转换为数字，
+        而是转换为Unicode 编码后比较
+        比较字符编码是一位一位进行比较
+
+        */
+
+        var result="11"<"5";
+        console.log(result);
+
+        var result2="abc"<"b";
+        console.log(result2);
+
+        //在字符串中使用转义字符输入Unicode 编码，\u四位编码
+
+        var a="\u2620";
+        console.log(a);
+
+        /*
+        undefined 衍生自null,
+        NaN不和任何值相等，包括它本身
+        
+        */
+        var a=undefined;
+        console.log(a==null);
+
+        var b=NaN;
+        console.log(b==NaN);
+        
+         
+        
+
+        
+
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>

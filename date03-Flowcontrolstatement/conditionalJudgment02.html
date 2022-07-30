@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>ifelse</title>
+        <script type="text/javascript">
+        /*
+        满足以下条件
+        身高：180cm，财富：1000万以上，帅：500以上
+        同时满足这三个条件，一定嫁给他，
+        这三个条件有为真的情况，嫁吧，必上不足，比下有余
+        如果这三个条件都不满足，则：不嫁
+        */
+       var height=prompt("请输入你的身高:(cm)");
+       var money=prompt("请输入你的财富:(万)");
+       var face=prompt("请输入你的颜值:(px)");
+
+       if(height>180&& money>1000 &&face>500){
+           alert("一定嫁给他");
+       }else if(height>180 ||money>1000||face>500){
+           alert("嫁吧，必上不足，比下有余");
+
+
+       }else{
+           alert("不嫁");
+       }
+    
+
+        </script>
+    </head>
+</html>

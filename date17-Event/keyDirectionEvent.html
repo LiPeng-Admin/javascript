@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>按键移动方向</title>
+        <style type="text/css">
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            position: absolute;
+        }
+        </style>
+        <script type="text/javascript">
+        window.onload=function(){
+            //实现使div跟随不同方向键移动
+
+            //绑定box1
+            var box1=document.getElementById("box1");
+
+            //定义一个变量,用来表示移动的速度
+            var speed=10;
+
+             //绑定document 
+            document.onkeydown=function(event){
+                //获取上下左右键不同编码
+                //兼容浏览器
+                event=event||window.event;
+               // console.log(event.keyCode);  //test
+               switch(event.keyCode){
+                   case 37:
+
+                       //console.log("向左移动");
+                       box1.style.left=box1.offsetLeft-speed+"px";
+                       break;
+                       case 38:
+                      // console.log("向上移动");
+                        box1.style.top=box1.offsetTop-speed+"px";
+                           break;
+                           case 39:
+                          // console.log("向右移动");
+                          box1.style.left=box1.offsetLeft+speed+"px";
+                               break;
+                               case 40:
+                               //console.log("向下移动");
+                               box1.style.top=box1.offsetTop+speed+"px";
+                                   break;
+
+               }
+
+
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <div id="box1">
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>定时器的应用一</title> 
+        <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            position: absolute;
+            /* left: 0; */
+        }
+
+        </style>
+        <script type="text/javascript">
+        window.onload=function(){
+        //获取box1
+        var box1=document.getElementById("box1");
+        //获取btn01
+        var btn01=document.getElementById("btn01");
+
+        var timer;
+
+        btn01.onclick=function(){
+
+            //关闭上一个定时器
+
+            clearInterval(timer);
+            //开启一个定时器，用来执行动画效果
+            timer=  setInterval(function(){
+                 //获取box1原来的值
+
+           var oldValue=parseInt(style(box1,"left"));
+           //alert(oldValue); //test
+
+           //在旧值的基础上累加
+           //var newValue=oldValue+10;
+
+          var newValue=oldValue+19;
+
+          //判断新值是不是大于800px
+          if(newValue>800){
+             newValue=800;
+          }
+
+           //将新值设置给box1
+           box1.style.left=newValue+"px"
+
+           //当移动到800px,停止移动
+           if(newValue==800){
+               clearInterval(timer);
+           }
+
+
+            },30)
+          
+          
+        }
+
+        //若需要兼容不同浏览器，采用自定义函数实现
+               function style(obj,name){
+        /*参数
+            obj 要获取样式的元素
+            name 要获取的样式名
+        */
+            
+            //判断浏览器使用的属性或方法
+            if(window.getComputedStyle){
+                return getComputedStyle(obj,null)[name];
+            }
+            else{
+                return obj.currentStyle[name];
+            }
+        }
+        }
+        </script>
+    </head>
+    <body>
+        <button id="btn01">点击我，box1向右移动</button>
+        <br/><br/>
+        <div id="box1"></div>
+
+        <!--
+             CSS border 属性允许您指定元素边框的样式、宽度和颜色
+            可以只为一个边指定所有单个边框属性：。 -->
+        <div style="width: 0; height: 1000px; border-left: 1px black solid; top: 0;position:absolute; left: 800px;"></div>
+        
+    </body>
+</html>

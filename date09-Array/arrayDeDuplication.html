@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>arrayDeDuplication</title>
+        <script type="text/javascript">
+
+        //定义一个数组
+        var arr=[1,2,3,2,3,2,4,4,4,5,3];
+
+        //获取数组的每一个元素
+        for(var i=0;i<arr.length;i++){
+            //console.log(arr[i]);
+            //获取该元素后的每一位元素
+            for(var j=i+1;j<arr.length;j++){
+               // console.log(arr[j]);
+                //如果两者比较元素相同，则删除
+                if(arr[i]==arr[j]){
+                    arr.splice(j,1);
+                    /*
+                    当删除j所在的元素后，后边的元素会自动补位
+                    此时将不会比较这个元素，需要在比较一次j所在位置的元素
+                    使j自减
+                    */
+
+                    j--; //重要一步
+                }
+
+            }
+
+        }
+        console.log(arr);
+        
+        </script>
+        
+    </head>
+</html>

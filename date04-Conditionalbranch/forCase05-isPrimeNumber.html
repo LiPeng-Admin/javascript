@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>isPrimeNumber</title>
+        <script type="text/javascript">
+        /*
+        用户输入一个数，判断这个数是不是质数
+        质数是指在大于1的自然数中，除了1和它本身以外不再有其他因数的自然数
+        1既不是质数也不是合数
+
+        */
+        var num=prompt("请输入一个大于1的整数：");
+        // console.log(num);
+        //默认flag为质数
+        var flag=true;
+      
+      if(num<=1){
+          alert("该值不合法");
+      }else{
+        for(i=2;i<num;i++){
+           //获取2-num 之间的数
+          // console.log(i);
+          //判断 num 是否能被 i 整除
+          if(num%i==0){
+              //如果num 被i 整除，则表示num一定不是质数
+              flag=false;
+
+          }
+          
+       }
+       if(flag){
+           alert(num+"是质数");
+       }else{
+          alert("这个不是质数") ;
+       }
+    }
+</script>
+    </head>
+</html>
+          
+
+      
+
+       
+
+       

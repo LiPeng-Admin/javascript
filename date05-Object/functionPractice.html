@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        /*
+        1:定义一个函数，判断这个数字是偶数，如果是，返回true，如果否，返回false
+        */
+       function isEvenNumbers(num){
+          return num%2==0;
+
+       }
+       var result=isEvenNumbers(5);
+       console.log("result结果是"+result);
+
+       /*
+       2:定义一个函数，求一个圆的面积
+
+       */
+      function area(r){
+         return 3.14*r*r
+
+      }
+      var result=area(5);
+      console.log("圆的面积是："+result);
+
+      /*
+      3:创建一个函数，可以在控制台输出一个人的信息
+      实参可以是任意的数据类型，可以是对象
+      参数过多时。可以将参数封装到一个对象中，通过对象传递
+      */
+     function sayHello(message){
+
+         console.log("我是"+message.name+","
+         +"我今年在五指山"+message.age+"年了"+","
+         +"我是一个"+message.gender+"性"+","
+         +"我的家乡在"+message.address);
+
+     }
+     var obj={
+         name:"孙悟空",
+         age:500,
+         gender:"男",
+         address:"花果山"
+     }
+     sayHello(obj);
+
+        </script>
+    </head>
+</html>

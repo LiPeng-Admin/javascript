@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>argument</title>
+        <script type="text/javascript">
+        /*
+        在调用函数时，浏览器每次都会传递两个隐含的参数
+        1：函数的上下文对象 this
+        2:封装实参的对象arguments
+        arguments是一个类数组对象，他可以通过索引操作数据，也可以获取长度
+        在调用函数时，传递的实参都会在arguments中保存
+        */
+        function fun(){
+
+              //console.log(typeof arguments);
+               //判断arguments 是否是数组
+            //console.log(arguments instanceof Array);
+
+            console.log(Array.isArray(arguments));
+            console.log(arguments.length);
+            console.log(arguments[0]);
+            console.log(arguments.callee==fun);
+        }
+        fun("hello","world");
+
+
+            
+           
+            
+           
+
+        
+       
+        </script>
+    </head>
+</html>

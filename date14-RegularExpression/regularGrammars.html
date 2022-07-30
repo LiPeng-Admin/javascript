@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>regulargrammars</title>
+        <script type="text/javascript">
+        
+        //创建正则表达式对象
+        var reg=new RegExp("aB","i");
+        console.log(reg.test("ABCabc"));
+
+        /*使用字面量创建正则表达式
+        语法：
+        var 变量=/正则表达式/匹配模式
+        */
+
+        var reg2=/aB/i;
+        console.log(reg2.test("ABCabc"));
+
+        //任务1：创建一个正则表达式，检查一个字符串中是否有a或者b
+        /*
+        使用 | 表示或
+
+        */
+       var  reg3=/A|B/i;
+       console.log(reg3.test("adfeb"));
+
+       //任务2：创建一个正则表达式，检查一个字符串是否有字母
+       /*
+       []里的内容也是或的关系
+       [ab]==a|b
+       */
+      var reg4=/[ab]/i;
+      console.log(reg4.test("Acdswb"));
+      var reg5=/[a-z]/i;
+      console.log(reg5.test("adCVE"));
+
+      //任务3：创建一个正则表达式，检查一个字符串是否包含"abc"或"adc"或"aec"
+      var reg5=/a[b-e]c/;
+      console.log(reg5.test("adc"));
+
+      /*
+      [^ ab] ^ 表示除了[]内容，
+      */
+
+      var reg6=/[^a-c]/;
+      console.log(reg6.test("a"));
+      console.log(reg6.test("bced"));
+
+
+
+
+
+
+        </script>
+    </head>
+</html>

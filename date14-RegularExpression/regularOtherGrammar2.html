@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        
+       // . 表示任意字符
+
+       var reg=/./;
+       document.write(reg.test("abc")+"<br>");
+      // document.write(reg.test(""));
+
+      /*
+      在正则表达式中使用 \表示转义字符
+      
+    */
+   //检查一个字符串中是否含有.
+   var reg2=/\./;
+   document.write(reg2.test("adb.def")+"<br>");
+   //检查一个字符串是否含有\
+   var reg3=/\\/;
+   document.write(reg3.test("b.\\")+"<br>");
+
+   /*
+   \w
+   -匹配任意字母,数字,_
+   \W
+   -除了字母，数字，_外， 匹配其他
+   \d
+   -匹配任意数字，相当于[0-9]
+   \D
+   -除了数字，匹配其他
+   \s
+   -匹配空格
+   \S
+   -除了空格，匹配其他
+   \b
+   -匹配单词边界
+   \B
+   -除了单词边界，匹配其他
+   */
+  var reg4=/\w/;
+  document.write(reg4.test("123")+"<br>");
+  document.write(reg4.test("abc")+"<br>");
+  document.write(reg4.test("_")+"<br>");
+  
+  var reg5=/\W/;
+  document.write(reg5.test("%$^")+"<br>");
+  document.write(reg5.test("12")+"<br>");
+  document.write(reg5.test("abc")+"<br>");
+  document.write(reg5.test("_")+"<br>");
+  document.write(reg5.test("12ab_")+"<br>");
+
+  var reg6=/\d/;
+  document.write(reg6.test("123")+"<br>");
+  document.write(reg6.test("abc")+"<br>");
+
+  var reg7=/\D/;
+  document.write(reg7.test("abc")+"<br>");
+  document.write(reg7.test("abc123")+"<br>");
+
+  var reg8=/\s/;
+  document.write(reg8.test("12 3")+"<br>");
+  document.write(reg8.test(" 123 ")+"<br>");
+
+  var reg9=/\S/;
+  document.write(reg9.test("_abc123")+"<br>")
+
+  //创建一个正则表达式，检查是否包含单词 english
+
+  var reg10=/\benglish\b/;
+  document.write(reg10.test("hello,She is an english")+"<br>");
+  document.write(reg10.test("this is englishbook")+"<br>");
+
+  //任务：接收用户输入
+ // var str=prompt("请输入你的姓名：");
+  //console.log(str);
+  
+  
+  //去掉前面也即开头的空格
+  var str="  hello";
+  var result=str.replace(/^\s*/,"");
+  console.log(result);
+  
+  //去掉后面也即结尾的空格
+  var str2="hello  ";
+  var result2=str2.replace(/\s*$/,"");
+  console.log(result2);
+
+  //去掉字符串中前后的空格
+  var str3="  hello  ";
+  var result=str3.replace(/^s* |\s*$/g,"");
+  console.log(result2);
+
+  //创建一个正则表达式，用于判断邮件是否符合规则
+  /*
+  规则
+  hello . lichao @ abc . com . cn
+
+  第一个：字母，数字，下划线, . \w
+  可能存在：第二个字母，数字，下划线
+  第三个：@
+  第四个：字母，数字 \[A-z0-9]
+  第五个：.,任意字母
+  可能存在：第六个：.,任意字母
+  \w{3,} (\.w+)* @ [A-z0-9]+ ((\.A-z){2-5}){1,2}
+
+*/
+var emailReg=/^\w{3,}(\.\w{1,})*@[A-z0-9]+(\.[A-z]{2,5}){1,2}$/;
+var email="peng.li@163.com";
+console.log(emailReg.test(email));
+
+
+</script>
+    </head>
+    </html>

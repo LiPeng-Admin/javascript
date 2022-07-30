@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>包装类</title>
+        <script type="text/javascript">
+        /*
+        基本数据类型
+        String Number Boolean Null Undefined 
+        引用数据类型
+        Object
+
+        JS中为我们提供了三个包装类，通过三个包装类可以将基本数据类型的数据转换为对象
+        String Number Boolean
+        注意：这种将数据类型转换为对象基本不会使用
+
+
+        */
+        var num=new Number(3);
+        console.log(typeof num);
+
+        //向num 中添加一个属性
+        num.hello="abcd";
+        console.log(num.hello);
+        var str=new String("字符串");
+        console.log(typeof str);
+        var bool=new Boolean(true);
+        console.log(typeof bool);
+
+        /*
+        方法和属性只能添加给对象，不能添加到基本数据类型
+        当对一些基本数据类型的值去调用属性和方法时，
+        浏览器临时使用包装类将其转换为对象，然后在调用对象的属性和方法
+        调用完后，在将其转换为基本数据类型
+        */
+       var n=123;
+       n=n.toString();
+       console.log(n);
+       console.log(typeof n);
+
+
+        </script>
+    </head>
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script text="text/javascript">
+        /*
+        获取一个三位数，使得每位上的数字的三次方之和等于本身的水仙花数
+        如：1^3+5^3+3^3=153
+        */
+       for(i=100;i<1000;i++){   
+           //定义一个三位数
+          // console.log(i);
+
+          //获取百位上的数字，a
+          var a=parseInt(i/100);
+          //获取十位山的数字，b
+          var b=parseInt((i-a*100)/10);
+          //获取个位上的数字
+          var c=i%10;
+          if(a*a*a+b*b*b+c*c*c==i){
+              console.log(i);
+          }
+
+       }
+       
+
+        </script>
+    </head>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>onload</title>
+        <script type="text/javascript">
+        /*
+        onload 事件会在整个页面加载完成之后才触发
+        为window 绑定一个onload 事件
+        */
+       window.onload=function(){
+           //获取按钮对象
+           var btn=document.getElementById("btn");
+           //单击绑定一个单击事件
+           btn.onclick=function(){
+               alert("单击一下，看看效果是不是相同的");
+           }
+       }
+        </script>
+    </head>
+    <body>
+        <button id="btn">点一下按钮</button>
+        <!-- <script type="text/javascript">
+
+         //获取按钮对象
+        var btn=document.getElementById("btn");
+
+         //绑定一个双击事件
+        btn.ondblclick=function(){
+            alert("双击一下，js代码是否弹出？")
+        } -->
+        
+
+            <!-- </script> -->
+
+    </body>
+</html>

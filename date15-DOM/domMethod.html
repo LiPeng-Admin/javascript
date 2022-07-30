@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        window.onload=function(){
+
+            //获取body 标签
+            // var body=document.getElementsByTagName("body")[0];
+            // document.write(body);
+            /*
+            在document中有一个属性body，保存的是body的引用
+            */
+            var body=document.body;
+            document.write(body+"<br>");
+            /*
+            document.documentElement保存的是html跟标签
+            */
+           var de=document.documentElement;
+           document.write(de+"<br>");
+
+            //document.all代表页面中的所有元素
+           var all=document.all;
+          
+           document.write(all+"<br>");
+           document.write(typeof all+"<br>");
+           document.write(all.length+"<br>");
+        //    for(var i=0;i<all.length;i++){
+        //        document.write(all[i]);
+        //    }
+
+           /*
+           根据元素的class 属性值查询一组元素节点对象，该方法不支持IE8及以下浏览器
+           */
+        //   var box1=document.getElementsByClassName("box1");
+        //   document.write(box1.length);
+        var  divs=document.getElementsByTagName("div");
+        document.write(divs.length);
+        // for(var i=0;i<divs.length;i++){
+        //     document.write(divs[i]);
+        // }
+
+        //获取 class 中"box1" 的所有div
+        /*
+        document.querySelector()
+        需要一个选择器的字符串作为参数，可以根据一个Css选择器来查询一个元素节点对象
+        使用该方法返回唯一的一个元素，如果满足条件为多个，它只会返回第一个元素
+        */
+        
+       var div= document.querySelector(".box1 div");
+       document.write(div.innerHTML);
+
+        /*
+        document.querySelectorAll()
+        它是将符合条件的元素封装到一个数组返回，
+        即使仅有一个元素符合条件，也会返回一个数组
+        */
+        var bos= document.querySelectorAll(".box1");
+        document.write(bos.length);
+        }
+        </script>
+    </head>
+    <body>
+        <div class="box1">
+        <div>我是box1中的div</div>
+         </div>
+        <div></div>
+    </body>
+    </html>
+
+        
+       
+
+ 

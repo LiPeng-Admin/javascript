@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>元素拖拽</title>
+        <script type="text/javascript">
+        window.onload=function(){
+        //分别获取id为btn01与btn02的元素
+        var btn01=document.getElementById("btn01");
+        var btn02=document.getElementById("btn02");
+
+        //分别为btn01与btn02绑定单击响应函数
+        btn01.onclick=function(){
+            alert(1);
+        }
+        btn02.onclick=function(){
+            alert(2);
+        }
+
+        //设置btn01对鼠标按下相关的事件进行捕获
+        //当调用一个元素的setCapture()方法以后，这个元素将会把所有的鼠标按下相关的事件捕获到自己身上
+        //此方法只适合ie8版本浏览器
+
+        btn01.setCapture(); 
+    }
+
+        </script>
+
+    </head>
+    <body>
+        <button id="btn01">按钮一</button>
+        <button id="btn02">按钮二</button>
+    </body>
+</html>

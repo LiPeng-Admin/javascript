@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>延迟调用</title>
+        <script type="text/javascript">
+        window.onload=function(){
+            var count=document.getElementById("count");
+            var num=1;
+
+            // var timer=setInterval(function(){
+            //     count.innerHTML=num++;
+            //     if(num==11){
+            //         clearInterval(timer)
+
+            //     }
+
+            // },1000)
+
+            /*
+
+            延迟调用
+             setTimeout(回调函数,延迟时间)
+             延迟时间也是毫秒计时
+            延时调用一个函数不是马上执行，而是隔一段时间后才执行，并且只会执行一次
+
+            */
+           setTimeout(function(){
+               count.innerHTML=num++;
+
+           },3000)
+          
+        }
+        </script>
+    </head>
+    <body>
+        <h2 id="count">
+
+        </h2>
+    </body>
+</html>

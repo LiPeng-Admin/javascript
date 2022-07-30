@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>photoswitch</title>
+        <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width: 500px;
+            margin: 70 auto;
+            padding: 10px;
+            background-color: greenyellow;
+            /* 设置文本居中 */
+            text-align: center;
+
+        }
+
+        </style>
+        <script type="text/javascript">
+        window.onload=function(){
+
+        //获取id为prev按钮绑定一个单击响应函数
+         var prev=document.getElementById("prev");
+         //获取id为next按钮绑定一个单击响应函数
+        var next=document.getElementById("next");
+ 
+            // 点击按钮切换图片
+
+            /*
+           切换图片需要修改img 标签的src属性
+           */
+          //获取img标签名
+          var img=document.getElementsByTagName("img")[0];
+         // alert(img);
+
+         //创建一个数组，用来保存图片的路径
+
+         var imgArr=["img/1.jpg",
+                    "img/2.jpg",
+                    "img/3.jpg",
+                    "img/4.jpg",
+                    "img/5.jpg",
+                    "img/6.jpg"
+                    ];
+       
+            
+        //创建一个变量，来保存当前正在显示的图片的索引
+        var index=0;
+         //获取id 为info 的p 元素
+         var info=document.getElementById("info");
+        //设置提示文字
+        info.innerHTML="总共"+imgArr.length+"张照片,这是第"+(index+1)+"照片";
+         
+         prev.onclick=function(){
+           // alert("上一张");
+           //切换到上一张，索引自减
+           index--;
+           //判断index 是否小于0
+           if(index<0){
+            index=imgArr.length-1;
+           }
+           img.src=imgArr[index];
+           info.innerHTML="总共"+imgArr.length+"张照片,这是第"+(index+1)+"照片";
+         };
+          
+         next.onclick=function(){
+          // alert("下一张");
+           //修改一个元素的属性：元素.属性=属性值
+            //切换到下一张，索引自增
+            index++;
+            if(index>imgArr.length-1){
+               index=0;
+            }
+           img.src=imgArr[index];
+           //img.src="img/2.jpg";
+           info.innerHTML="总共"+imgArr.length+"张照片,这是第"+(index+1)+"照片";
+         };
+ 
+        };
+        </script>
+    </head>
+    <body>
+        <div id="outer">
+            <p id="info"></p>
+            <img src="img/1.jpg" alt="美女"/>
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+
+        </div>
+    </body>
+</html>

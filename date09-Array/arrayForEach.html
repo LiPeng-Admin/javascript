@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>foreach</title>
+        <script type="text/javascript">
+        //定义一个数组
+
+        var arr=[
+            "孙悟空",
+            "猪八戒",
+            "白骨精",
+            "沙悟净",
+    ]
+    /*
+    浏览器在回调函数中传递三个参数
+    第一个参数，就是遍历的函数
+    第二个参数，遍历元素的索引
+    第三个参数，遍历的数组
+
+    */
+    arr.forEach(function(value,index,obj){
+        console.log(value);
+        //console.log(index);
+    });
+
+        </script>
+    </head>
+</html>

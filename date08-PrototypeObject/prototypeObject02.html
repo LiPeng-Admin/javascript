@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+        //创建构造函数
+        function myClass(){
+
+        }
+        //向myClass的原型中添加一个name属性
+        myClass.prototype.name="我是原型中的name";
+        var mc=new myClass();
+        console.log(mc.name);
+        //使用in 判断对象mc 是否有name 属性
+        console.log('name' in mc);
+
+        //可以使用对象的hasOwnProperty()来检查对象自身中是否包含该属性
+        console.log(mc.hasOwnProperty("name"));
+
+        </script>
+    </head>
+</html>

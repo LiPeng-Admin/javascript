@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        /*
+        在js 中共有六种数据类型
+        String ,Number,Boolean,Null,Undefined,--基本数据类型
+        Object(对象)--引用数据类型
+        */
+
+        /*
+        String 在js 中字符串需要使用引号引起来 
+        在字符串中我们可以使用 \ 作为转义字符
+        \" 表示双引号
+        \'表示单引号
+        \n表示换行
+        \t 表示制表符，相当于tab键
+        \\表示 \
+
+        */
+        var str="hello";
+       console.log(str);
+
+        /*
+        Number 在js中 所有数值均为Numbe 类型
+        Number.MAX_VALUE 表述数字的最大值
+        Number.MIN_VALUE 表示数字的最小值
+        NaN 是一个特殊的数字，表示Not A Number
+
+        js 中整数的运算基本可以保证精确，但浮点数计算，可能得到一个不精确的结果
+        
+        */
+        //可以使用typeof 检查一个变量的类型
+
+        var a=123;
+        var b=12.12;
+        var c="123";
+        var d=Number.MAX_VALUE;
+        var e="ab"*"bc";
+        var f=123+456;
+        var g=0.1+0.2;
+
+        console.log(typeof a);
+        console.log(typeof b);
+        console.log(typeof c);
+        console.log(d);
+        console.log(e);
+        console.log(f);
+        console.log(g);
+        /*
+        boolean 类型true 或者false
+        
+        */
+        var bool=true;
+        console.log(bool);
+        console.log(typeof bool);
+
+        /*
+        Null 类型的值只有一个，null,专门用来表示一个为空的对象
+
+        */
+        var a=null;
+        console.log(a);
+        console.log(typeof a);
+        /*
+        Undefined 类型的值只有一个，声明一个变量，但是并不给变量赋值，它的值就是Undefind
+        */
+       var u;
+       console.log(u);
+
+
+       
+        </script>
+        
+
+    </head>
+</html>
